@@ -91,3 +91,62 @@ li{
 .mainbut:hover{
     background-color: rgba(0, 0, 0, 0.329);
 }
+.menu{
+    padding: 5rem;
+    background-color: #f8f9fa;
+}
+.section-title{
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+.section-subtitle{
+    text-align: center;
+    font-size: 1.1rem;
+    color:#666;
+    margin-bottom: 3rem;
+}
+.menu-category {
+    margin-bottom: 3rem;
+}
+.menu-category h3{
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+    border-bottom: 2px solid rgb(230, 88, 23);
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
+.menukeitems{
+    display: grid;
+    gap: 1.5rem;
+    cursor: pointer;
+}
+.menukeitem{
+    display: flex;
+    padding: 1.5rem;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,1);
+    transition: transform 0.3s ease;
+}
+.menukeitem:hover{
+    transform:translateY(-3px);
+}
+.menukeitemkeinfo h4{
+    font-size: larger;
+    color: black;
+}
+.menukeitemkeinfo{
+    font-size: 1.2rem;
+    color: #666;
+    line-height:1.4;
+    margin-bottom: 0.5rem;
+}
+.money{
+    font-size: 1.1rem;
+    color: #178645;
+}
