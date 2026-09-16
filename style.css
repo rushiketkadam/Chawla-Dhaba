@@ -31,6 +31,8 @@ header{
     left: 0;
     width: 100%;
     padding: 1rem;
+    z-index: 9999;
+    animation: slideDown 0.8s ease-out forwards;
 }
 .navbar{
     padding: 0 50px;
@@ -68,18 +70,22 @@ li{
 .hero-contents h2{
     font-weight: 900;
     font-size: 3rem;
+    animation: slideUp 0.8s ease-out 0.2s forwards;
+
 }
 .hero-contents p {
     font-size: 1.5rem;
     font-weight: 400;
     margin-bottom: 30px;
     letter-spacing: 1px;
+    animation: slideUp 0.8s ease-out 0.4s forwards;
 }
 .herobuttons{
     display: flex;
         gap: 30px;
         align-items: center;
         justify-content: center;
+        animation: fadeIn 0.8s ease-out 0.6s forwards;
 }
 .mainbut{
     display:inline-flex;
@@ -93,10 +99,12 @@ li{
 }
 .mainbut:hover{
     background-color: rgba(0, 0, 0, 0.329);
+    transform: scale(1.05);
 }
 .menu{
     padding: 5rem;
     background-color: #f8f9fa;
+    
 }
 .section-title{
     text-align: center;
@@ -148,6 +156,12 @@ li{
     color: #666;
     line-height:1.4;
     margin-bottom: 0.5rem;
+}
+.menu .section-title, 
+.menu .section-subtitle, 
+.menu .menu-category {
+    opacity: 0;
+    animation: slideUp 0.8s ease-out 0.6s forwards;
 }
 .money{
     font-size: 1.1rem;
@@ -242,6 +256,11 @@ li{
 outline: none;
 border-color: #e74c3c;
 }
+.about .section-title, 
+.about-content {
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out 0.8s forwards;
+}
 #subb{
     background-color: #e74c3c;
     padding: 1.5rem 2rem;
@@ -251,4 +270,96 @@ border-color: #e74c3c;
     font-weight: bold;
 display: block;
     margin: 0 auto;
+}
+.contact .section-title, 
+.contact-content {
+    opacity: 0;
+    animation: slideUp 0.8s ease-out 1s forwards;
+}
+.root{
+    --primary-color:#e74c3c;
+    --secondary-color:#2c3e50;
+    --accent-color:#3498db;
+    --light-text:#666;
+    --dark-text:#333;
+    --border-radius:8px;
+    --shadow:0 4px 15px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+@media (max-width: 900px) {
+            .navbar {
+                flex-direction: column;
+                padding: 0 20px;
+                gap: 15px;
+            }
+            
+            .linkss {
+                gap: 20px;
+                flex-wrap: wrap;
+                justify-content: center;
+                padding-bottom: 10px;
+            }
+
+            .about-content, .contact-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .hero-contents h2 {
+                font-size: 2.5rem;
+            }
+
+            .menu, .about, .contact {
+                padding: 4rem 20px;
+            }
+        }
+
+       
+        @media (max-width: 600px) {
+            .hero-contents h2 {
+                font-size: 2rem;
+            }
+            
+            .hero-contents p {
+                font-size: 1.1rem;
+            }
+
+            .herobuttons {
+                flex-direction: column;
+                gap: 15px;
+                width: 100%;
+            }
+
+            .mainbut {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .menukeitem {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+
+            .linkss li a {
+                padding: 0.5rem 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+        }
+        @keyframes slideDown {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: scale(0.9); }
+    100% { opacity: 1; transform: scale(1); }
 }
